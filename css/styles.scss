@@ -1,0 +1,118 @@
+@import "partials/_variables.scss";
+@import "partials/_mixins.scss";
+@import "partials/_landing-header.scss";
+@import "partials/_header.scss";
+@import "partials/_footer.scss";
+@import "partials/_content.scss";
+@import "partials/_animations.scss";
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'IBM Plex Sans',sans-serif;
+  font-size: .8rem;
+  display: none;
+  line-height: 1.25rem;
+  position: relative;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,ul,ol,li{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1{
+  font-weight: 400;
+  line-height: 2rem;
+  font-size: 2em;
+  font-family: "IBM Plex Serif", serif;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 30px;
+  color: red;
+}
+
+h2{
+  // font-family: 'IBM Plex Serif', serif;
+  font-size: 1.25em;
+  margin-bottom: 25px;
+  font-weight: 900;
+  text-align: center;
+  color: red;
+}
+
+h3{
+  font-size: 1em;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+p{
+  font-family: 'IBM Plex Serif', serif;
+  margin-bottom: 25px;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+a{
+  color: red;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+a:hover{
+  opacity: .5;
+}
+
+.spacer{
+  border-bottom: 1px solid red;
+  margin: 25px 0;
+  animation: spacerexpand 1s .5s ease forwards;
+}
+
+
+#myBtn{
+  display: none;
+  position: fixed;
+  bottom:25px;
+  right: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  outline:none;
+  border:none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: transform .3s ease, box-shadow .3s ease;
+  // box-shadow: 2px 2px 4px rgba(0,0,0,.25);
+}
+
+#myBtn:hover{
+  transform: scale(1.1);
+  box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+}
+
+::selection {
+  background: pink;
+}
+::-moz-selection {
+  background: pink;
+}
+
+
+
+
+@media (min-width: 768px) {
+  #myBtn{
+    bottom:50px;
+    right:50px;
+  }
+}

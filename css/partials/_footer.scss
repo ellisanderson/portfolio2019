@@ -1,0 +1,10 @@
+footer{
+  @include flexcenter;
+  flex-direction: column;
+  width: 100%;
+  color: red;
+
+  span{
+    margin: 50px 0 100px;
+  }
+}

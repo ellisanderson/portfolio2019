@@ -1,0 +1,40 @@
+@keyframes spacerexpand {
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 100px;
+  }
+}
+
+@keyframes clockwise {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterclockwise {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+}

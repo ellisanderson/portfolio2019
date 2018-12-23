@@ -1,0 +1,53 @@
+.landing-header{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top:0;
+  @include flexcenter;
+  flex-direction: column;
+  padding-bottom: 10vh;
+
+  .logo-link{
+    font-weight: 900;
+    letter-spacing: .25em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: red;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  nav{
+    font-family: 'IBM Plex Serif', serif;
+
+    ul{
+      @include flexcenter;
+      li{
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .letter-wrap{
+    position: absolute;
+    color:white;
+    transition: all 1s ease;
+    cursor: pointer;
+    z-index: -1;
+    padding: 1% 2%;
+    opacity: .5;
+    mix-blend-mode: difference;
+    // background-blend-mode: exclusion;
+  }
+
+  .line{
+    border-bottom-style: dotted;
+    position: absolute;
+    transition: all 1s ease;
+    z-index: -1;
+    cursor: pointer;
+    color:white;
+    opacity: .5;
+  }
+}
