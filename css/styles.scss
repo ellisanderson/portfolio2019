@@ -76,6 +76,12 @@ a:hover{
   animation: spacerexpand 1s .5s ease forwards;
 }
 
+.small-spacer{
+  border-bottom: 1px solid black;
+  width: 50px;
+  margin: 25px auto;
+}
+
 
 #myBtn{
   display: none;
