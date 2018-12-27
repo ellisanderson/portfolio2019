@@ -25,7 +25,7 @@ $(document).ready(function() {
 // Add Header, Footer & Extra Tags
 $(document).ready(function(){
   var header = '<header><a href="index.html" class="logo"><span>E</span></a><div class="spacer"></div><nav><ul><li><a href="design.html">Design</a></li><li><a href="cv.html">CV / Resume</a></li></ul></nav></header>';
-  var footer = '<footer><div class="spacer"></div><span>Ellis Henry Anderson ©2019</span></footer>';
+  var footer = '<footer><div class="spacer"></div><div class="footer-text"><span>Ellis Henry Anderson</span><span>•</span><span><a href="mailto:ellishenryanderson@gmail.com">ellishenryanderson@gmail.com</a></span><span>•</span><span>© 2019</span></div></footer>';
   var fancyCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />';
   var fancyJS = '<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>';
 
@@ -152,7 +152,8 @@ $(document).ready(function(){
 
 // Back to Top Button
 $(document).ready(function(){
-  var toTopButton = '<button type="button" id="myBtn">&#10514;</button>';
+  var toTopButton = '<button type="button" id="myBtn">top</button>';
+  // &#10514;
 
   $('.content').append(toTopButton);
 

@@ -87,13 +87,17 @@ footer {
   flex-direction: column;
   width: 100%;
   color: red; }
-  footer span {
-    margin: 50px 0 100px; }
+  footer .footer-text {
+    display: flex; }
+    footer .footer-text span {
+      margin: 50px 5px 100px; }
 
 .content {
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: 50px; }
+  .content .project-grid {
+    display: grid; }
   .content section .project-portal {
     position: relative; }
     .content section .project-portal .project-portal-image {
@@ -116,7 +120,8 @@ footer {
       position: absolute;
       top: 40%;
       opacity: 0;
-      transition: opacity .5s ease; }
+      transition: opacity .5s ease;
+      line-height: 3em; }
       .content section .project-portal .project-portal-description li {
         font-family: 'IBM Plex Sans', sans-serif;
         color: black; }
@@ -210,12 +215,14 @@ footer {
 @media (min-width: 415px) {
   .content {
     padding: 0 50px 50px; } }
+@media (min-width: 667px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr; } }
 @media (min-width: 768px) {
   .content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 100px 100px;
-    grid-template-columns: 1fr 1fr; }
+    padding: 0 100px 100px; }
     .content .image-section .two-images {
       grid-template-columns: 1fr 1fr; }
     .content .image-section .three-images {
@@ -319,7 +326,6 @@ a:hover {
   right: calc(50% - 20px);
   width: 40px;
   height: 40px;
-  font-size: 1rem;
   outline: none;
   border: none;
   background-color: red;

@@ -3,8 +3,13 @@ footer{
   flex-direction: column;
   width: 100%;
   color: red;
+  // font-size: .6em;
 
-  span{
-    margin: 50px 0 100px;
+  .footer-text{
+    display: flex;
+
+    span{
+      margin: 50px 5px 100px;
+    }
   }
 }

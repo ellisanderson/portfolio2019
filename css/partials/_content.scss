@@ -4,6 +4,10 @@
   margin-bottom: 50px;
   // grid-gap: 50px;
 
+  .project-grid{
+    display: grid;
+  }
+
   section{
 
     .project-portal{
@@ -33,6 +37,7 @@
         top: 40%;
         opacity: 0;
         transition: opacity .5s ease;
+        line-height: 3em;
 
         li{
           font-family: 'IBM Plex Sans', sans-serif;
@@ -189,15 +194,30 @@
   }
 }
 
+@media (min-width:667px) {
+  .project-grid{
+    grid-template-columns: 1fr 1fr;
+    // grid-gap: 10px;
+  }
+}
+
 
 @media (min-width:768px) {
   .content{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 100px 100px;
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
+
+    .project-grid{
+      // grid-template-columns: 1fr 1fr;
+      // grid-gap: 10px;
+    }
 
     .image-section{
+      // max-width: 1200px;
+      // margin: 0 auto;
+
       .two-images{
         grid-template-columns: 1fr 1fr;
       }
