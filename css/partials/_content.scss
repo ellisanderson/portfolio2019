@@ -93,12 +93,14 @@
     }
 
     ol{
+      font-family: "IBM Plex Serif", serif;
       li{
         margin-top: 15px;
         text-align: justify;
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto;
+        // word-break: break-all;
       }
     }
 
@@ -117,6 +119,7 @@
     .one-image{
       display: grid;
       grid-gap: 50px;
+      margin-top:50px;
     }
 
     .two-images{

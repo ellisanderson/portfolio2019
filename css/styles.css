@@ -155,12 +155,14 @@ footer {
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto; }
-    .content .writing-section ol li {
-      margin-top: 15px;
-      text-align: justify;
-      -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto; }
+    .content .writing-section ol {
+      font-family: "IBM Plex Serif", serif; }
+      .content .writing-section ol li {
+        margin-top: 15px;
+        text-align: justify;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto; }
   .content .image-section {
     grid-column: 1 / span 2;
     margin-bottom: 50px; }
@@ -170,7 +172,8 @@ footer {
       background-color: lightblue; }
     .content .image-section .one-image {
       display: grid;
-      grid-gap: 50px; }
+      grid-gap: 50px;
+      margin-top: 50px; }
     .content .image-section .two-images {
       display: grid;
       grid-gap: 50px; }
@@ -334,6 +337,9 @@ a:hover {
 
 ::-moz-selection {
   background: pink; }
+
+img {
+  image-orientation: from-image; }
 
 @media (min-width: 768px) {
   #myBtn {
