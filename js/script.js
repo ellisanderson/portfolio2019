@@ -24,8 +24,8 @@ $(document).ready(function() {
 
 // Add Header, Footer & Extra Tags
 $(document).ready(function(){
-  var header = '<header><a href="index2.html" class="logo"><span>E</span></a><nav><a href="#" class="menu-link">menu</a><div class="underline"></div></nav></header>';
-  var navigation = '<div class="nav-background"><ul><div class="spacer"></div><li><a href="index2.html">Design</a></li><div class="spacer"></div></ul><div class="close">Close</div></div>';
+  var header = '<header><a href="index.html" class="logo"><span>E</span></a><nav><a href="#" class="menu-link">menu</a><div class="underline"></div></nav></header>';
+  var navigation = '<div class="nav-background"><ul><div class="spacer"></div><li><a href="index.html">Design</a></li><div class="spacer"></div></ul><div class="close">Close</div></div>';
   var sidename = '<div class="side-name">Ellis Henry Anderson</div>';
   var sidetitle = '<div class="side-title">Designer / Maker</div>';
   var footer = '<footer><div class="spacer"></div><div class="footer-text"><span><a href="mailto:ellishenryanderson@gmail.com">ellishenryanderson@gmail.com</a></span><span>/</span><span>© 2019</span></div></footer>';
