@@ -1,0 +1,148 @@
+.carousel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  width:100%;
+  height:100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+
+  .spacer{
+    position: fixed;
+    top:35px;
+    display: none;
+  }
+
+  .spacer:nth-of-type(1){
+    bottom:35px;
+  }
+}
+
+.container{
+  width: 100%;
+  position: relative;
+  max-width: 500px;
+
+  .item-wrapper{
+    width: 100%;
+
+
+    .item{
+      margin: 0 auto;
+      width: 100%;
+      // max-width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      img{
+        width: 100%;
+      }
+
+      h1{
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+
+      h2{
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+.slick-dots{
+  bottom: -40px;
+}
+
+.slick-dots li button{
+  transition: transform .5s ease;
+}
+
+.slick-dots li button:hover{
+  transform: scale(1.25);
+}
+
+.slick-dots li button:before{
+  font-size: 20px;
+  line-height: 20px;
+  color:pink;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before{
+  color: red;
+  opacity: 1;
+}
+
+.arrow-wrap{
+  background: blue;
+}
+
+.slick-arrow{
+  z-index: 1;
+  background: transparent;
+  position: absolute;
+  outline:none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: red;
+  bottom: -50px;
+  @include flexcenter;
+  transition: transform .3s ease;
+  font-size: 1.5rem;
+
+  i{
+    position: absolute;
+    top:14px;
+  }
+}
+
+.slick-arrow:hover{
+  transform: scale(1.1);
+}
+
+.slick-arrow::before{
+  font-weight: 900;
+  color: red;
+}
+
+.slick-next:before, .slick-prev:before{
+  font-family: inherit;
+}
+
+.slick-next{
+  right: 10%;
+}
+
+.slick-prev{
+  left: 10%;
+}
+
+
+@media (min-width:767px) {
+  .slick-arrow{
+    bottom: 50%;
+  }
+
+  .slick-prev{
+    left:-75px;
+  }
+
+  .slick-next{
+    right:-75px;
+  }
+}
+
+@media (min-height:800px){
+  .carousel{
+    .spacer{
+      display: block;
+    }
+  }
+}

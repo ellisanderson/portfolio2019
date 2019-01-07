@@ -24,15 +24,31 @@ $(document).ready(function() {
 
 // Add Header, Footer & Extra Tags
 $(document).ready(function(){
-  var header = '<header><a href="index.html" class="logo"><span>E</span></a><div class="spacer"></div><nav><ul><li><a href="design.html">Design</a></li><li><a href="cv.html">CV / Resume</a></li></ul></nav></header>';
-  var footer = '<footer><div class="spacer"></div><div class="footer-text"><span>Ellis Henry Anderson</span><span>•</span><span><a href="mailto:ellishenryanderson@gmail.com">ellishenryanderson@gmail.com</a></span><span>•</span><span>© 2019</span></div></footer>';
+  var header = '<header><a href="index2.html" class="logo"><span>E</span></a><nav><a href="#" class="menu-link">menu</a><div class="underline"></div></nav></header>';
+  var navigation = '<div class="nav-background"><ul><div class="spacer"></div><li><a href="index2.html">Design</a></li><div class="spacer"></div></ul><div class="close">Close</div></div>';
+  var sidename = '<div class="side-name">Ellis Henry Anderson</div>';
+  var sidetitle = '<div class="side-title">Designer / Maker</div>';
+  var footer = '<footer><div class="spacer"></div><div class="footer-text"><span><a href="mailto:ellishenryanderson@gmail.com">ellishenryanderson@gmail.com</a></span><span>/</span><span>© 2019</span></div></footer>';
   var fancyCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />';
   var fancyJS = '<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>';
+  var fontawesome = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">';
 
-  $('head').append(fancyCSS);
+  $('head').append(fancyCSS, fontawesome);
   $('body script:first-of-type').before(footer);
-  $('body').prepend(header);
+  $('body').prepend(header, sidename, sidetitle, navigation);
   $('body').append(fancyJS);
+
+  $('nav a').click(function(e){
+    e.preventDefault();
+    $('.nav-background').animate({'top': 0 + '%', 'opacity': '1'}, 500);
+  });
+
+  $('.nav-background .close').click(function(){
+    $('.nav-background').animate({'top': -100 + '%', 'opacity': '0'}, 500);
+  })
+
+
+
 });
 
 
@@ -117,7 +133,7 @@ $(document).ready(function(){
     });
   };
 
-  window.onload = randomLetters() & randomLines();
+  // window.onload = randomLetters() & randomLines();
 
   $(window).resize(function(){
     return randomLetters() & randomLines();
@@ -152,7 +168,7 @@ $(document).ready(function(){
 
 // Back to Top Button
 $(document).ready(function(){
-  var toTopButton = '<button type="button" id="myBtn">top</button>';
+  var toTopButton = '<button type="button" id="myBtn"><i class="fas fa-arrow-up"></i></button>';
   // &#10514;
 
   $('.content').append(toTopButton);
@@ -161,10 +177,12 @@ $(document).ready(function(){
   window.onscroll = function() {scrollFunction()};
 
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      $('#myBtn').fadeIn();
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      $('#myBtn').css({'transform':'scale(1)'});
+      // $('.side-name, .side-title').fadeOut(500);
     } else {
-      $('#myBtn').fadeOut();
+      $('#myBtn').css({'transform':'scale(0)'});
+      // $('.side-name, .side-title').fadeIn();
     }
   }
   //Smooth scroll to top
@@ -182,5 +200,116 @@ $(document).ready(function(){
     var src = $(this).attr('src');
     var fancyWrap = '<a href="' + src + '" data-fancybox></a>'
     $(this).wrap(fancyWrap);
+  });
+});
+
+
+// //Carousel
+// $(document).ready(function(){
+//   $.fn.isOnScreen = function(){
+//     var win = $(window);
+//
+//     var viewport = {
+//         top : win.scrollTop(),
+//         left : win.scrollLeft()
+//     };
+//     viewport.right = viewport.left + win.width();
+//     viewport.bottom = viewport.top + win.height();
+//
+//     var bounds = this.offset();
+//     bounds.right = bounds.left + this.outerWidth();
+//     bounds.bottom = bounds.top + this.outerHeight();
+//
+//     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+//   };
+//
+//   //
+//
+//
+//   $('.card-wrap:last-of-type, .dot:last-of-type').addClass('last');
+//   $('.card-wrap:first-of-type, .dot:first-of-type').addClass('first');
+//   $('.card-wrap:nth-of-type(2), .dot:nth-of-type(2)').addClass('second');
+//   $('.card-wrap:nth-last-of-type(2), .dot:nth-last-of-type(2)').addClass('secondlast');
+//
+//   // var projectNumber = document.getElementById("card-container").childElementCount;
+//
+//   $('.next').click(function(){
+//     $('.card-wrap').animate({'right':'+=100%'}, 500);
+//     if($('.second').isOnScreen()){
+//       $('.prev').show();
+//     }
+//     if($('.last').isOnScreen()){
+//       $('.next').hide();
+//     }
+//   });
+//
+//   $('.prev').click(function(){
+//     $('.card-wrap').animate({'right':'-=100%'}, 500);
+//     if($('.secondlast').isOnScreen()){
+//       $('.next').show();
+//     }
+//     if($('.first').isOnScreen()){
+//       $('.prev').hide();
+//     }
+//   });
+//
+//   $('.next, .prev').click(function(){
+//     $(this).addClass("noclick").delay(500).queue(function(){
+//        $(this).removeClass("noclick").dequeue();
+//     });
+//   });
+//
+//
+// });
+//
+//
+// //Carousel Dots
+// $(document).ready(function(){
+//   var dot = '<div class="dot"></div>';
+//   var dotcontainer = '<div class="dot-container"></div>';
+//
+//   $('.carousel').append(dotcontainer);
+//
+//   $('.card-wrap').each(function(n){
+//     $('.dot-container').append(dot);
+//     $(this).attr('id', 'card-wrap' + (n + 1))
+//   });
+//
+//   $('.dot').each(function(n) {
+//     $(this).attr('id', n);
+//   });
+//
+//   $('.dot:last-of-type').addClass('last');
+//   $('.dot:first-of-type').addClass('first');
+//
+//   $('.dot').click(function(){
+//     var dotnumber = $(this).attr('id');
+//     var dotnumberhundred = dotnumber * 100;
+//     var dotrightpercentage = (dotnumber * 100) + '%';
+//
+//     $('.card-wrap').animate({'right': dotrightpercentage}, 500);
+//
+//     $('.next, .prev').show();
+//
+//   });
+//
+//   $('.dot:last-of-type').click(function(){
+//     $('.next').hide();
+//   });
+//
+//   $('.dot:first-of-type').click(function(){
+//     $('.prev').hide();
+//   });
+// });
+
+$(document).ready(function(){
+
+  $('.container button').wrap('<div class="arrow-wrap"></div>');
+  $('.container').slick({
+    dots: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 1000,
   });
 });

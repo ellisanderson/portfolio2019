@@ -1,8 +1,13 @@
 header{
+  margin: 0 auto 10vh;
   width: 100%;
-  height: 200px;
-  @include flexcenter;
-  flex-direction: column;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+  padding: 0 10%;
+  z-index: 2;
 
   .logo{
     @include flexcenter;
@@ -26,15 +31,69 @@ header{
   }
 
   nav{
+    height: 40px;
     @include flexcenter;
+    position: relative;
 
-    ul{
-      @include flexcenter;
-      font-family: 'IBM Plex Serif', serif;
+    a{
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
 
-      li{
-        margin: 0 10px;
+    .underline{
+      width: 0;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background: red;
+      transition: width .3s ease;
+    }
+  }
+
+  nav:hover .underline{
+    width: 100%;
+  }
+}
+
+.nav-background{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: -100%;
+  z-index: 10;
+  background-color: red;
+  color: white;
+  @include flexcenter;
+  opacity: 0;
+
+  ul{
+    text-align: center;
+    line-height: 2rem;
+
+    .spacer{
+      border-color:white;
+      margin: 25px auto;
+    }
+
+    li{
+      font-size: 1.5em;
+
+      a{
+        color: white;
+        font-family: "IBM Plex Serif", serif;
       }
     }
+  }
+
+  .close{
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    cursor: pointer;
   }
 }

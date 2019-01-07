@@ -5,6 +5,7 @@
 @import "partials/_footer.scss";
 @import "partials/_content.scss";
 @import "partials/_animations.scss";
+@import "partials/_carousel.scss";
 
 *{
   box-sizing: border-box;
@@ -32,12 +33,11 @@ h1{
   font-family: "IBM Plex Serif", serif;
   font-style: italic;
   text-align: center;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   color: red;
 }
 
 h2{
-  // font-family: 'IBM Plex Serif', serif;
   font-size: 1.25em;
   margin-bottom: 25px;
   font-weight: 900;
@@ -67,12 +67,13 @@ a{
 }
 
 a:hover{
-  opacity: .5;
+  opacity: .8;
 }
 
 .spacer{
-  border-bottom: 1px solid red;
-  margin: 25px 0;
+  border-bottom: 2px solid red;
+  margin: 25px auto;
+  width: 0;
   animation: spacerexpand 1s .5s ease forwards;
 }
 
@@ -84,27 +85,24 @@ a:hover{
 
 
 #myBtn{
-  display: none;
   position: fixed;
-  bottom:25px;
-  right: calc(50% - 20px);
+  z-index: 1;
+  bottom:50px;
+  right:10%;
   width: 40px;
   height: 40px;
-  // font-size: 1rem;
-  // text-transform: uppercase;
   outline:none;
   border:none;
-  background-color: red;
-  color: white;
+  background-color: pink;
+  color: red;
   cursor: pointer;
   border-radius: 50px;
-  transition: transform .3s ease, box-shadow .3s ease;
-  // box-shadow: 2px 2px 4px rgba(0,0,0,.25);
+  transition: transform .3s ease;
+  transform: scale(0);
 }
 
 #myBtn:hover{
   transform: scale(1.1);
-  box-shadow: 2px 2px 4px rgba(0,0,0,.15);
 }
 
 ::selection {
@@ -118,12 +116,78 @@ img{
   image-orientation: from-image;
 }
 
+.noclick{
+  pointer-events:none;
+}
+
+.fade-out-in{
+  animation: fadeoutin .65s ease-out;
+}
+
+.side-name, .side-title{
+  position: fixed;
+  top: 25vh;
+  height: 50vh;
+  z-index: 1;
+  color: red;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  -webkit-text-orientation: upright;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: .6rem;
+  display: none;
+}
+
+.side-name{
+  left: 10%;
+  transform: translateX(10px);
+}
+
+.side-title{
+  right:10%;
+  transform: translateX(-10px);
+}
+
+.fun-button{
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 50px;
+  right: 10%;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: pink;
+  color: red;
+  transition: transform .3s ease;
+  font-size:1.25em;
+  font-weight: 900;
+}
+
+.fun-button:hover{
+  transform: scale(1.1);
+}
+
+.date{
+  position: fixed;
+  bottom: 50px;
+  left: 10%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: red;
+  @include flexcenter;
+  width: 40px;
+  height: 40px;
+}
 
 
-
-@media (min-width: 768px) {
-  #myBtn{
-    bottom:50px;
-    right:50px;
+@media (min-width:1240px) {
+  .side-name, .side-title{
+    display: block;
   }
 }

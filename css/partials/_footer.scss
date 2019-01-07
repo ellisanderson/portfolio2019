@@ -3,7 +3,9 @@ footer{
   flex-direction: column;
   width: 100%;
   color: red;
-  // font-size: .6em;
+  font-size: .6em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 
   .footer-text{
     display: flex;
